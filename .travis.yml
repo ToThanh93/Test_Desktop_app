@@ -1,0 +1,13 @@
+language: java
+
+jdk:
+  - openjdk21
+
+install: true
+
+script:
+  - ./gradlew build
+  - ./gradlew test
+
+after_success:
+  - ./gradlew jacocoTestReport coveralls
