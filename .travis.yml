@@ -11,3 +11,17 @@ script:
 
 after_success:
   - ./gradlew jacocoTestReport coveralls
+
+
+addons:
+  sonarcloud:
+    organization: "tothanh93"
+    token:
+      secure: "4337567362a54106d21153f8895e7d5b92a739fb" # encrypted value of your token
+
+script:
+  - ./gradlew sonar
+script:
+  - ./gradlew build
+  - ./gradlew test
+  - sonar-scanner
