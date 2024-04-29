@@ -17,11 +17,10 @@ addons:
   sonarcloud:
     organization: "tothanh93"
     token:
-      secure: "4337567362a54106d21153f8895e7d5b92a739fb" # encrypted value of your token
+      secure: "4337567362a54106d21153f8895e7d5b92a739fb" 
 
-script:
-  - ./gradlew sonar
 script:
   - ./gradlew build
   - ./gradlew test
-  - sonar-scanner
+  - ./gradlew sonar
+  - ./gradlew jacocoTestReport coveralls
