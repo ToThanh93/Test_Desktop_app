@@ -22,5 +22,6 @@ addons:
 script:
   - ./gradlew build
   - ./gradlew test
+  - ./gradlew sonarqube
   - ./gradlew sonar
   - ./gradlew jacocoTestReport coveralls
