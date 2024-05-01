@@ -2,12 +2,10 @@ language: java
 
 jdk:
   - openjdk21
+before_install:
+  - chmod +x gradlew
 
 install: true
-
-script:
-  - ./gradlew build
-  - ./gradlew test
 
 after_success:
   - ./gradlew jacocoTestReport coveralls
