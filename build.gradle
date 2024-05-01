@@ -27,6 +27,7 @@ sonarqube {
     property "sonar.projectKey", "tothanh93_desktop-test-app"
     property "sonar.organization", "tothanh93"
     property "sonar.host.url", "https://sonarcloud.io"
+      property "sonar.gradle.skipCompile", "true"
     // Đảm bảo bạn thêm token cho phân tích (được mã hóa nếu là public repo)
     // property "sonar.login", "your_sonar_login_token"
   }
