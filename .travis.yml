@@ -23,8 +23,7 @@ script:
   - ./gradlew build
   - ./gradlew test
   - ./gradlew clean build
-  - ./gradlew sonarqube
   - ./gradlew sonar
-  - ./gradlew sonarqube --info
+  - ./gradlew sonar --info
     ./gradlew coveralls --debug
   - ./gradlew jacocoTestReport coveralls
