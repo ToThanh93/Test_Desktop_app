@@ -1,21 +1,15 @@
 plugins {
     id 'java'
-<<<<<<< HEAD
-
     id "org.sonarqube" version "4.4.1.3373"
 }
 
-group 'org.example'
-=======
-    id "org.sonarqube" version "4.4.1.3373"
-}
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(11) // or any version supported by your Gradle
     }
 }
-group 'org.example' 
->>>>>>> 93ea3f06ed4e26ee9015c39056b0eebae7e7c1ff
+
+group 'org.example'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -23,11 +17,6 @@ repositories {
 }
 
 dependencies {
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> 93ea3f06ed4e26ee9015c39056b0eebae7e7c1ff
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
@@ -37,24 +26,10 @@ test {
 }
 
 sonarqube {
-  properties {
-<<<<<<< HEAD
-
-=======
-   
->>>>>>> 93ea3f06ed4e26ee9015c39056b0eebae7e7c1ff
-    property "sonar.projectKey", "tothanh93_desktop-test-app"
-    property "sonar.organization", "tothanh93"
-    property "sonar.host.url", "https://sonarcloud.io"
-    property "sonar.gradle.skipCompile", "true"
-<<<<<<< HEAD
-  }
+    properties {
+        property "sonar.projectKey", "tothanh93_desktop-test-app"
+        property "sonar.organization", "tothanh93"
+        property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.gradle.skipCompile", "true"
+    }
 }
-
-
-=======
-    
-  }
-}
-
->>>>>>> 93ea3f06ed4e26ee9015c39056b0eebae7e7c1ff
