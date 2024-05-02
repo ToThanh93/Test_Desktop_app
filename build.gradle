@@ -1,10 +1,9 @@
 plugins {
     id 'java'
-    // Đảm bảo bạn sử dụng phiên bản mới nhất của plugin SonarQube tương thích với Gradle
     id "org.sonarqube" version "4.4.1.3373"
 }
 
-group 'org.example' // Thay đổi này để phù hợp với nhóm hoặc tổ chức của bạn
+group 'org.example' 
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -12,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    // Các dependencies cho testing với JUnit 5
+    
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
@@ -23,15 +22,12 @@ test {
 
 sonarqube {
   properties {
-    // Các property cần thiết cho việc phân tích SonarQube
+   
     property "sonar.projectKey", "tothanh93_desktop-test-app"
     property "sonar.organization", "tothanh93"
     property "sonar.host.url", "https://sonarcloud.io"
-      property "sonar.gradle.skipCompile", "true"
     property "sonar.gradle.skipCompile", "true"
-    // Đảm bảo bạn thêm token cho phân tích (được mã hóa nếu là public repo)
-    // property "sonar.login", "your_sonar_login_token"
+    
   }
 }
 
-// Optional: Nếu bạn muốn định nghĩa các tasks Gradle tùy chỉnh hoặc cấu hình bổ sung
