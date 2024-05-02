@@ -19,11 +19,11 @@ addons:
     token:
       secure: "4337567362a54106d21153f8895e7d5b92a739fb" 
 
+
 script:
-  - ./gradlew build
-  - ./gradlew test
-  - ./gradlew clean build
-  - ./gradlew sonar
-  - ./gradlew sonar --info
-    ./gradlew coveralls --debug
-  - ./gradlew jacocoTestReport coveralls
+    - ./gradlew build
+    - ./gradlew test
+    - ./gradlew clean build
+    - ./gradlew sonar
+    - ./gradlew sonar --info && ./gradlew coveralls --debug
+    - ./gradlew jacocoTestReport coveralls --debug
