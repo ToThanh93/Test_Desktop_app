@@ -40,5 +40,6 @@ sonarqube {
         property "sonar.organization", "tothanh93"
         property "sonar.host.url", "https://sonarcloud.io"
         property "sonar.gradle.skipCompile", "true"
+        property "sonar.login", "a49133f85ac1490fd9db521e39e2fda9299aec05"
     }
 }
