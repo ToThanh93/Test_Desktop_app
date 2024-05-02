@@ -1,6 +1,8 @@
 plugins {
     id 'java'
     id "org.sonarqube" version "4.4.1.3373"
+    id 'jacoco'
+    id 'com.github.kt3k.coveralls' version '2.10.2'
 }
 
 java {
@@ -16,6 +18,13 @@ repositories {
     mavenCentral()
 }
 
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+}
+
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
@@ -27,7 +36,7 @@ test {
 
 sonarqube {
     properties {
-        property "sonar.projectKey", "tothanh93_desktop-test-app"
+        property "sonar.projectKey", "tothanh93_desktop_test_app"
         property "sonar.organization", "tothanh93"
         property "sonar.host.url", "https://sonarcloud.io"
         property "sonar.gradle.skipCompile", "true"
