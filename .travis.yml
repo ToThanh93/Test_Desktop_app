@@ -25,4 +25,6 @@ script:
     - ./gradlew test
     - ./gradlew clean build
     - ./gradlew sonar
+    - ./gradlew sonar --info
+    - ./gradlew sonar --debug
     - ./gradlew jacocoTestReport coveralls --debug
