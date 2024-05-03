@@ -9,11 +9,7 @@ before_install:
 install: true
   
   
-  task printSonarToken {
-  doLast {
-println "SONAR_TOKEN: " + System.getenv("SONAR_TOKEN")
-}
-}
+
 
 script:
   - ./gradlew clean build

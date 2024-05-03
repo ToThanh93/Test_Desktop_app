@@ -17,6 +17,11 @@ version '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
 }
+task printSonarToken {
+    doLast {
+        println "SONAR_TOKEN: " + System.getenv("SONAR_TOKEN")
+    }
+}
 
 jacocoTestReport {
     reports {
