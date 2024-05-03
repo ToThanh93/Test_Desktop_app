@@ -1,25 +1,22 @@
 language: java
 
 jdk:
-  - openjdk21
-  
+
+  - openjdk17
+
 before_install:
   - chmod +x gradlew
 
 install: true
 
-after_success:
+script:
+  - ./gradlew clean build
+  - ./gradlew test
   - ./gradlew jacocoTestReport coveralls
-
+  - ./gradlew sonarqube
 
 addons:
   sonarcloud:
     organization: "tothanh93"
     token:
-      secure: "4337567362a54106d21153f8895e7d5b92a739fb" 
-
-script:
-  - ./gradlew build
-  - ./gradlew test
-  - ./gradlew sonar
-  - ./gradlew jacocoTestReport coveralls
+      secure: "fc4b11ee430b707eb11a48f8e04111f2e7069a9b"

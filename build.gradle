@@ -1,35 +1,44 @@
 plugins {
     id 'java'
-    // Đảm bảo bạn sử dụng phiên bản mới nhất của plugin SonarQube tương thích với Gradle
     id "org.sonarqube" version "4.4.1.3373"
+    id 'jacoco'
+    id 'com.github.kt3k.coveralls' version '2.10.2'
 }
 
-group 'org.example' // Thay đổi này để phù hợp với nhóm hoặc tổ chức của bạn
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11) // or any version supported by your Gradle
+    }
+}
+
+group 'org.example'
 version '1.0-SNAPSHOT'
 
 repositories {
-    mavenCentral() // Nơi Gradle tìm các dependencies
+    mavenCentral()
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
 }
 
 dependencies {
-    // Các dependencies cho testing với JUnit 5
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
 
 test {
-    useJUnitPlatform() // Cho phép Gradle sử dụng JUnit Platform cho test
+    useJUnitPlatform()
 }
 
-sonarqube {
-  properties {
-    // Các property cần thiết cho việc phân tích SonarQube
-    property "sonar.projectKey", "tothanh93_desktop-test-app"
-    property "sonar.organization", "tothanh93"
-    property "sonar.host.url", "https://sonarcloud.io"
-    // Đảm bảo bạn thêm token cho phân tích (được mã hóa nếu là public repo)
-    // property "sonar.login", "your_sonar_login_token"
-  }
+sonar {
+    properties {
+        property "sonar.projectKey", "tothanh93_desktop-test-app"
+        property "sonar.organization", "tothanh93"
+        property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.gradle.skipCompile", "true"
+    }
 }
-
-// Optional: Nếu bạn muốn định nghĩa các tasks Gradle tùy chỉnh hoặc cấu hình bổ sung
