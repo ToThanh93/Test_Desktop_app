@@ -1,13 +1,13 @@
 plugins {
     id 'java'
-    id "org.sonarqube" version "4.4.1.3373"
+    id "org.sonarqube" version "4.4.1.3373" // Kiểm tra và cập nhật phiên bản mới nhất
     id 'jacoco'
-    id 'com.github.kt3k.coveralls' version '2.2.1'
+    id 'com.github.kt3k.coveralls' version '2.10.1'
 }
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(11) // hoặc phiên bản Java mà bạn đang sử dụng
+        languageVersion = JavaLanguageVersion.of(11) // Hoặc phiên bản Java bạn muốn sử dụng
     }
 }
 
@@ -18,37 +18,29 @@ repositories {
     mavenCentral()
 }
 
-task printSonarToken {
-    doLast {
-        println "SONAR_TOKEN: " + System.getenv("SONAR_TOKEN")
-    }
-}
-
 jacocoTestReport {
     reports {
         xml.enabled true
         html.enabled true
     }
+    // Thêm cấu hình loại trừ nếu cần
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1' // Kiểm tra phiên bản mới nhất
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
 
 test {
     useJUnitPlatform()
-    testLogging {
-        events "passed", "skipped", "failed"
-    }
 }
 
-sonarqube {
+sonar {
     properties {
-        property "sonar.gradle.skipCompile", "true"
         property "sonar.projectKey", "tothanh93_desktop-test-app"
         property "sonar.organization", "tothanh93"
         property "sonar.host.url", "https://sonarcloud.io"
-        property "sonar.login", System.getenv("SONAR_TOKEN")
+        property "sonar.gradle.skipCompile", "true"
+        // Thêm các thuộc tính xác thực nếu cần
     }
 }
