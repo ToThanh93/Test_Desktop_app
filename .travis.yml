@@ -1,12 +1,16 @@
 language: java
 
 jdk:
-  - openjdk11
+  - openjdk17
 
   
+before_install:
+  - chmod +x gradlew
 
 install: true
 
+after_success:
+  - ./gradlew jacocoTestReport coveralls
 
 
 addons:
