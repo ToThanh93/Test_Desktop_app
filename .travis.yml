@@ -7,12 +7,21 @@ before_install:
   - chmod +x gradlew
 
 install: true
+  
+  
+  task printSonarToken {
+  doLast {
+println "SONAR_TOKEN: " + System.getenv("SONAR_TOKEN")
+}
+}
 
 script:
   - ./gradlew clean build
   - ./gradlew test
-  - ./gradlew jacocoTestReport coveralls
+  - ./gradlew printSonarToken
   - ./gradlew sonarqube
+  - ./gradlew jacocoTestReport coveralls
+
 
 addons:
   sonarcloud:
