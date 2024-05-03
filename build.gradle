@@ -2,7 +2,7 @@ plugins {
     id 'java'
     id "org.sonarqube" version "4.4.1.3373"
     id 'jacoco'
-    id 'com.github.kt3k.coveralls' version '3.3.2'
+    id 'com.github.kt3k.coveralls' version '2.2.1'
 }
 
 java {
