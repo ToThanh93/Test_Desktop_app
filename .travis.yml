@@ -24,4 +24,4 @@ script:
     - ./gradlew build
     - ./gradlew test
     - ./gradlew clean build
-   
+    - ./gradlew sonar
