@@ -17,7 +17,7 @@ addons:
   sonarcloud:
     organization: "tothanh93"
     token:
-      secure: "70352cd34317b46ffcf4e5e9e7a4d2c3db277206"
+      secure: "fc4b11ee430b707eb11a48f8e04111f2e7069a9b"
 
 
 script:
