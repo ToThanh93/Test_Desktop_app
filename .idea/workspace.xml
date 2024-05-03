@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0583d98e-89f7-4cb8-8ea6-283c28d26de5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +74,7 @@
       <workItem from="1714601548900" duration="615000" />
       <workItem from="1714609861204" duration="817000" />
       <workItem from="1714672770229" duration="10886000" />
-      <workItem from="1714723105197" duration="6501000" />
+      <workItem from="1714723105197" duration="8602000" />
     </task>
     <servers />
   </component>
