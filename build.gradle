@@ -1,13 +1,13 @@
 plugins {
     id 'java'
-    id "org.sonarqube" version "4.4.1.3373"
-    id 'jacoco'
-    id 'com.github.kt3k.coveralls' version '2.10.1'
+    id "org.sonarqube" version "9.1"
+    id 'jacoco' version "2.0.9"
+    id 'com.github.kt3k.coveralls' version '3.3.2'
 }
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(11) // or any version supported by your Gradle
+        languageVersion = JavaLanguageVersion.of(11) // hoặc phiên bản Java mà bạn đang sử dụng
     }
 }
 
@@ -17,6 +17,7 @@ version '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
 }
+
 task printSonarToken {
     doLast {
         println "SONAR_TOKEN: " + System.getenv("SONAR_TOKEN")
@@ -37,9 +38,12 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
 
-sonar {
+sonarqube {
     properties {
         property "sonar.gradle.skipCompile", "true"
         property "sonar.projectKey", "tothanh93_desktop-test-app"

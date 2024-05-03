@@ -8,14 +8,11 @@ before_install:
 
 install: true
 
-
 script:
-  - ./gradlew clean build
-  - ./gradlew test
+  - ./gradlew clean build test
   - ./gradlew printSonarToken
   - ./gradlew sonarqube
   - ./gradlew jacocoTestReport coveralls
-
 
 addons:
   sonarcloud:
