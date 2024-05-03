@@ -2,7 +2,7 @@ plugins {
     id 'java'
     id "org.sonarqube" version "4.4.1.3373"
     id 'jacoco'
-    id 'com.github.kt3k.coveralls' version '2.10.2'
+    id 'com.github.kt3k.coveralls' version '2.10.1'
 }
 
 java {
@@ -40,5 +40,6 @@ sonar {
         property "sonar.organization", "tothanh93"
         property "sonar.host.url", "https://sonarcloud.io"
         property "sonar.gradle.skipCompile", "true"
+        property "sonar.login", System.getenv("SONAR_TOKEN")
     }
 }
