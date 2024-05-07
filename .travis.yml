@@ -8,14 +8,18 @@ before_install:
 
 install: true
 
-script:
-  - ./gradlew clean build test
-  - ./gradlew printSonarToken
-  - ./gradlew sonarqube
-  - ./gradlew jacocoTestReport coveralls
 
 addons:
   sonarcloud:
     organization: "tothanh93"
-    token:
-      secure: "fc4b11ee430b707eb11a48f8e04111f2e7069a9b"
+    #token:
+     # secure: "fc4b11ee430b707eb11a48f8e04111f2e7069a9b"
+    projectKey: "tothanh93_desktop-test-app"
+
+
+script:
+  - ./gradlew clean build test
+  - ./gradlew sonarqube
+
+after_success:
+  - ./gradlew test

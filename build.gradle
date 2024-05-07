@@ -1,33 +1,13 @@
 plugins {
     id 'java'
-    id "org.sonarqube" version "4.4.1.3373" // Kiểm tra và cập nhật phiên bản mới nhất
-    id 'jacoco'
-    id 'com.github.kt3k.coveralls' version '2.10.1'
-}
-
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(11) // Hoặc phiên bản Java bạn muốn sử dụng
-    }
+    id "org.sonarqube" version "4.4.1.3373"
 }
 
 group 'org.example'
 version '1.0-SNAPSHOT'
 
-repositories {
-    mavenCentral()
-}
-
-jacocoTestReport {
-    reports {
-        xml.enabled true
-        html.enabled true
-    }
-    // Thêm cấu hình loại trừ nếu cần
-}
-
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1' // Kiểm tra phiên bản mới nhất
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
 
@@ -41,6 +21,6 @@ sonar {
         property "sonar.organization", "tothanh93"
         property "sonar.host.url", "https://sonarcloud.io"
         property "sonar.gradle.skipCompile", "true"
-        // Thêm các thuộc tính xác thực nếu cần
+
     }
 }
