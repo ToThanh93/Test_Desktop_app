@@ -6,8 +6,12 @@ jdk:
 before_install:
   - chmod +x gradlew
 
-install: true
 
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
+    - '$HOME/.gradle'
 
 addons:
   sonarcloud:
@@ -18,8 +22,8 @@ addons:
 
 
 script:
-  - ./gradlew clean build test
-  - ./gradlew sonar --scan
+  - ./gradlew build
+  - sonar-scanner
 
 after_success:
   - ./gradlew test
