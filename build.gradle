@@ -20,7 +20,5 @@ sonar {
         property "sonar.projectKey", "tothanh93_desktop-test-app"
         property "sonar.organization", "tothanh93"
         property "sonar.host.url", "https://sonarcloud.io"
-        property "sonar.gradle.skipCompile", "true"
-
     }
 }
