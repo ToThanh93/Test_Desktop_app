@@ -19,7 +19,7 @@ addons:
 
 script:
   - ./gradlew clean build test
-  - ./gradlew sonarqube --scan
+  - ./gradlew sonar --scan
 
 after_success:
   - ./gradlew test
