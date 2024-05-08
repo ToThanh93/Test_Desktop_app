@@ -6,6 +6,9 @@ jdk:
 before_install:
   - chmod +x gradlew
 
+env:
+  global:
+    - COVERALLS_REPO_TOKEN= SG1xOKBljDkBeh0mIcM1uIaf2cktEKTmf
 
 cache:
   directories:

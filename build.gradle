@@ -28,3 +28,14 @@ sonar {
         property 'sonar.gradle.skipCompile', 'true'
     }
 }
+
+jacoco {
+    toolVersion = "0.8.5"
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+}
