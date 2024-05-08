@@ -8,7 +8,7 @@ before_install:
 
 env:
   global:
-    - COVERALLS_REPO_TOKEN= SG1xOKBljDkBeh0mIcM1uIaf2cktEKTmf
+    - COVERALLS_REPO_TOKEN=SG1xOKBljDkBeh0mIcM1uIaf2cktEKTmf
 
 cache:
   directories:
