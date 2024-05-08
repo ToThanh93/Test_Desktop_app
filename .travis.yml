@@ -19,7 +19,7 @@ cache:
 addons:
   sonarcloud:
     organization: "tothanh93"
-    #token:
+    #token:git 
      # secure: "fc4b11ee430b707eb11a48f8e04111f2e7069a9b"
     projectKey: "tothanh93_desktop-test-app"
 
@@ -28,6 +28,7 @@ script:
   - ./gradlew test
   - ./gradlew build
   - sonar-scanner
+  - ./gradlew jacocoTestReport coveralls
 
 after_success:
   - ./gradlew jacocoTestReport coveralls
