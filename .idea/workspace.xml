@@ -7,6 +7,7 @@
     <list default="true" id="0583d98e-89f7-4cb8-8ea6-283c28d26de5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +79,11 @@
       <workItem from="1714723105197" duration="10975000" />
       <workItem from="1714767986320" duration="4534000" />
       <workItem from="1715030657379" duration="197000" />
-      <workItem from="1715068716650" duration="5117000" />
+      <workItem from="1715068716650" duration="5729000" />
+      <workItem from="1715091634538" duration="220000" />
+      <workItem from="1715112641097" duration="489000" />
+      <workItem from="1715171916079" duration="97000" />
+      <workItem from="1715205696320" duration="304000" />
     </task>
     <servers />
   </component>
