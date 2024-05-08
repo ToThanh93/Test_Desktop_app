@@ -25,9 +25,9 @@ addons:
 
 
 script:
+  - ./gradlew test
   - ./gradlew build
   - sonar-scanner
 
 after_success:
-  - ./gradlew test
   - ./gradlew jacocoTestReport coveralls
