@@ -2,7 +2,7 @@ plugins {
     id 'java'
     id "org.sonarqube" version "4.4.1.3373"
     id 'jacoco'
-    id 'com.github.kt3k.coveralls' version '2.10.2'
+    id 'com.github.kt3k.coveralls' version '2.12.2'
 }
 
 group 'org.example'
@@ -30,7 +30,7 @@ sonar {
 }
 
 jacoco {
-    toolVersion = "0.8.5"
+    toolVersion = "0.8.7"
 }
 
 jacocoTestReport {
@@ -38,4 +38,14 @@ jacocoTestReport {
         xml.enabled true
         html.enabled true
     }
+}
+
+task coveralls(type: JavaExec) {
+    main = "org.kt3k.gradle.plugin.coveralls.CoverallsTask"
+    classpath = configurations.coveralls
+    args = ['jacocoTestReport']
+}
+
+coveralls {
+    jacocoReportPath = "${buildDir}/customJacocoReportDir/jacocoTestReport.xml"
 }
