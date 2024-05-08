@@ -40,11 +40,6 @@ jacocoTestReport {
     }
 }
 
-task coveralls(type: JavaExec) {
-    main = "org.kt3k.gradle.plugin.coveralls.CoverallsTask"
-    classpath = configurations.coveralls
-    args = ['jacocoTestReport']
-}
 
 coveralls {
     jacocoReportPath = "${buildDir}/customJacocoReportDir/jacocoTestReport.xml"
