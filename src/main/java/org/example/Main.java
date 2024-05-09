@@ -1,4 +1,5 @@
 package org.example;
+
 import java.util.Scanner;
 
 public class Main {
@@ -12,46 +13,38 @@ public class Main {
         String operator = scanner.next();
         scanner.close();
 
-        double result;
+        try {
+            double result = calculate(num1, num2, operator);
+            System.out.printf("Result: %.2f %s %.2f = %.2f\n", num1, operator, num2, result);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
+    public static double calculate(double num1, double num2, String operator) {
         switch (operator) {
             case "+":
-                result = num1 + num2;
-                break;
+                return num1 + num2;
             case "-":
-                result = num1 - num2;
-                break;
+                return num1 - num2;
             case "*":
-                result = num1 * num2;
-                break;
+                return num1 * num2;
             case "/":
-                if (num2 != 0) {
-                    result = num1 / num2;
-                } else {
-                    System.out.println("Error! Division by zero.");
-                    return;
+                if (num2 == 0) {
+                    throw new IllegalArgumentException("Error! Division by zero.");
                 }
-                break;
+                return num1 / num2;
             case "^":
-                result = Math.pow(num1, num2);
-                break;
+                return Math.pow(num1, num2);
             case "sqrt":
-                if (num1 >= 0) {
-                    result = Math.sqrt(num1);
-                    System.out.printf("Square root of %.2f is %.2f\n", num1, result);
-                } else {
-                    System.out.println("Error! Cannot take the square root of a negative number.");
-                    return;
+                if (num1 < 0) {
+                    throw new IllegalArgumentException("Error! Cannot take the square root of a negative number.");
                 }
-                return;
+                return Math.sqrt(num1);
             case "%":
-                result = num1 % num2;
-                break;
+                return num1 % num2;
             default:
-                System.out.println("Error! Operator is not correct.");
-                return;
+                throw new IllegalArgumentException("Error! Operator is not correct.");
         }
-
-        System.out.printf("Result: %.2f %s %.2f = %.2f\n", num1, operator, num2, result);
     }
 }
