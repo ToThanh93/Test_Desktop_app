@@ -30,19 +30,16 @@ sonar {
 }
 
 jacoco {
-    toolVersion = "0.8.5"
-    reportsDir = file("$buildDir/customJacocoReportDir")
+    toolVersion = "0.8.7"
 }
 
 jacocoTestReport {
-    dependsOn test // đảm bảo rằng task test được chạy trước khi tạo báo cáo
     reports {
         xml.enabled true
         html.enabled true
-        xml.destination file("${buildDir}/reports/jacoco/test/jacocoTestReport.xml")
-        html.destination file("${buildDir}/reports/jacoco/test/html")
     }
 }
+
 
 coveralls {
     jacocoReportPath = "${buildDir}/customJacocoReportDir/jacocoTestReport.xml"
