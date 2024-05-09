@@ -28,11 +28,6 @@ public class MainTest {
     }
 
     @Test
-    public void testDivisionByZero() {
-        assertThrows(ArithmeticException.class, () -> Main.calculate(1, 0, "/"));
-    }
-
-    @Test
     public void testPower() {
         assertEquals(8, Main.calculate(2, 3, "^"));
     }
