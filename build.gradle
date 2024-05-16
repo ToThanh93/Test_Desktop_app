@@ -34,13 +34,21 @@ jacoco {
 }
 
 jacocoTestReport {
+    dependsOn test
     reports {
-        xml.enabled true
-        html.enabled true
+        xml.enabled = true
+        xml.destination file("${buildDir}/reports/jacoco/jacocoTestReport.xml")
+        html.enabled = true
+        html.destination file("${buildDir}/reports/jacoco")
     }
+}
+
+test {
+    finalizedBy jacocoTestReport
 }
 
 
 coveralls {
-    jacocoReportPath = "${buildDir}/customJacocoReportDir/jacocoTestReport.xml"
+    sourceDirs = ['src/main/java']
+    jacocoReportPath = "${buildDir}/reports/jacoco/jacocoTestReport.xml"
 }
